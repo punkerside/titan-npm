@@ -20,7 +20,7 @@ jobs:
       with:
         repository: punkerside/titan-bash
         ref: main
-        token: ${{secrets.GITHUBSL_TOKEN}}
+        # token: ${{secrets.GITHUBSL_TOKEN}}
         path: .titan-bash/
 
     - name: Build

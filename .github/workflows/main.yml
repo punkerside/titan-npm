@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+  DOCKERHUB_PASS: ${{ secrets.DOCKERHUB_PASS }}
+
 jobs:
   Pipeline:
     name: Default
@@ -24,3 +28,6 @@ jobs:
 
     - name: Build
       uses: ./.titan-bash/pipelines/image/github
+      with:
+        DOCKERHUB_USER: ${DOCKERHUB_USER}
+        DOCKERHUB_PASS: ${DOCKERHUB_PASS}
